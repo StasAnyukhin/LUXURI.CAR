@@ -1,6 +1,14 @@
+import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { CarsComponent } from './app/cars/cars.component';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+@Component({
+  selector: 'app-root',
+  imports: [CarsComponent],
+  template: `<app-cars></app-cars>`,
+})
+export class App {
+  name = 'Angular';
+}
+
+bootstrapApplication(App);
